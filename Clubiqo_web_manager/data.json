@@ -1,0 +1,62 @@
+[
+  {
+    "ID": 1,
+    "FIRSTNAME": "John",
+    "LASTNAME": "Doe",
+    "EMAIL": "john.doe@example.com",
+    "PASSWORD": "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3",
+    "PHONENUMBER": 1234567890,
+    "ROLE": "member",
+    "STATUS": "active",
+    "JOINDATE": "01/15/2024",
+    "BIRTHDATE": "05/20/1990"
+  },
+  {
+    "ID": 2,
+    "FIRSTNAME": "Jane",
+    "LASTNAME": "Smith",
+    "EMAIL": "jane.smith@example.com",
+    "PASSWORD": "b3d2b21e5f917b43f7211a7a00f27c34d6a6a1f3fff1fa07e998e86f7f7a27ae3",
+    "PHONENUMBER": 9876543210,
+    "ROLE": "admin",
+    "STATUS": "active",
+    "JOINDATE": "02/10/2024",
+    "BIRTHDATE": "11/02/1988"
+  },
+  {
+    "ID": 3,
+    "FIRSTNAME": "Alice",
+    "LASTNAME": "Johnson",
+    "EMAIL": "alice.johnson@example.com",
+    "PASSWORD": "c4ca4238a0b923820dcc509a6f75849b",
+    "PHONENUMBER": 5551234567,
+    "ROLE": "member",
+    "STATUS": "active",
+    "JOINDATE": "03/01/2024",
+    "BIRTHDATE": "12/08/1992"
+  },
+  {
+    "ID": 4,
+    "FIRSTNAME": "Bob",
+    "LASTNAME": "Brown",
+    "EMAIL": "bob.brown@example.com",
+    "PASSWORD": "d4735e3a265e110d68c940808697a2f3",
+    "PHONENUMBER": 5559876543,
+    "ROLE": "member",
+    "STATUS": "active",
+    "JOINDATE": "04/01/2024",
+    "BIRTHDATE": "12/02/1990"
+  },
+  {
+    "ID": 5,
+    "FIRSTNAME": "Charlie",
+    "LASTNAME": "Davis",
+    "EMAIL": "charlie.davis@example.com",
+    "PASSWORD": "e138db12c5764a0c8a1b5e5d8f9a2e3b",
+    "PHONENUMBER": 5555555555,
+    "ROLE": "member",
+    "STATUS": "active",
+    "JOINDATE": "05/01/2024",
+    "BIRTHDATE": "06/03/1991"
+  }
+]

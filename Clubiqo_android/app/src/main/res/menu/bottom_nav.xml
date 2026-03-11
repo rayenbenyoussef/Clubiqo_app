@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/news"
+        android:icon="@drawable/baseline_newspaper_24"
+        android:title="News" />
+    <item
+        android:id="@+id/eventResponses"
+        android:icon="@drawable/events_svgrepo_com"
+        android:title="Events" />
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/profile_round_1342_svgrepo_com"
+        android:title="My profile" />
+    <item
+        android:id="@+id/manage"
+        android:icon="@drawable/manage_svgrepo_com"
+        android:title="Manage" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/settings_svgrepo_com"
+        android:title="Settings" />
+</menu>

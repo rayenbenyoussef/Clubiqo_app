@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/manage_news"
+        android:icon="@drawable/gui_management_svgrepo_com_1_"
+        android:title="Manage News" />
+    <item
+        android:id="@+id/manage_events"
+        android:icon="@drawable/manage_dates_edit_svgrepo_com"
+        android:title="Manage Events" />
+    <item
+        android:id="@+id/manage_mem"
+        android:icon="@drawable/users_edit_svgrepo_com_1_"
+        android:title="Manage Members" />
+</menu>

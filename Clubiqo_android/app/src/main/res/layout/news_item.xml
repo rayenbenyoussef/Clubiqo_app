@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="left"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/news_image"
+        android:layout_width="400dp"
+        android:layout_height="203dp"
+        android:paddingRight="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/baseline_newspaper_24" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp">
+
+        <TextView
+            android:id="@+id/news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="News Title"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/news_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="news description blalalala bla blaaa lbla lbla bla bla lbla bla bla lbal blabla lbla bla bla lbal blabla lbla bla bla lbal blabla lbla bla bla lbal blabla lbla bla bla lbal blabla lbla bla bla lbal blabla lbla bla bla lbal blabla lbla bla bla lbal bla bla lbal bla "
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="6dp"
+        android:paddingBottom="30dp">
+
+        <Button
+            android:id="@+id/info_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1D8DE0"
+            android:text="    More info    " />
+
+    </LinearLayout>
+
+</LinearLayout>
