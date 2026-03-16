@@ -33,9 +33,6 @@ public  class TokenManager {
 
     private static final String FILE_NAME = "token.json";
 
-    public static String generateToken(int length) {
-
-    }
     public static void generateToken(Context context) {
         StringBuilder tokenb = new StringBuilder(50);
 

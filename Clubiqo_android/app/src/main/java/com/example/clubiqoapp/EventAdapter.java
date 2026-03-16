@@ -12,12 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventHolder> {
-    ArrayList<EventResponse> events;
+    ArrayList<Event> events;
     FragmentManager frag;
-    public EventAdapter(FragmentManager frag, ArrayList<EventResponse> eventResponses) {
+    public EventAdapter(FragmentManager frag, ArrayList<Event> eventResponses) {
         this.events = eventResponses;
         this.frag=frag;
     }
@@ -33,8 +36,12 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventHolder>
 
     @Override
     public void onBindViewHolder(@NonNull EventHolder holder, int position) {
-        EventResponse event =this.events.get(position);
-        holder.eventImage.setImageResource(event.getImg());
+        Event event =this.events.get(position);
+        Glide.with(holder.itemView.getContext())
+                .load(event.getImg()) // URL from API
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.error)
+                .into(holder.eventImage);
         holder.eventTitle.setText(event.getTitle());
         holder.eventDrscription.setText(event.getDescription());
 

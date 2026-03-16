@@ -9,18 +9,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.snackbar.Snackbar;
 
 public class UpdateProfileFragment extends Fragment {
 
     public static final String ARG_FULLNAME="Fullname";
     public static final String ARG_PHONEN="Phone number";
-    public static final String ARG_PASSWORD="Password";
+    public static final String ARG_IMG="Profile img";
 
     private String fullname;
     private String phoneNumber;
-    private String password;
+    private String img;
 
 
 
@@ -29,12 +31,12 @@ public class UpdateProfileFragment extends Fragment {
     }
 
 
-    public static UpdateProfileFragment newInstance(String fullname,String phonenumber,String password) {
+    public static UpdateProfileFragment newInstance(String fullname,String phonenumber,String img) {
         UpdateProfileFragment fragment = new UpdateProfileFragment();
         Bundle args=new Bundle();
         args.putString(ARG_FULLNAME,fullname);
         args.putString(ARG_PHONEN,phonenumber);
-        args.putString(ARG_PASSWORD,password);
+        args.putString(ARG_IMG,img);
         fragment.setArguments(args);
 
         return fragment;
@@ -50,7 +52,7 @@ public class UpdateProfileFragment extends Fragment {
 
             this.fullname = args.getString(ARG_FULLNAME);
             this.phoneNumber = args.getString(ARG_PHONEN);
-            this.password = args.getString(ARG_PASSWORD);
+            this.img = args.getString(ARG_IMG);
 
         }
 
@@ -61,7 +63,15 @@ public class UpdateProfileFragment extends Fragment {
         userPhone.setHint(this.phoneNumber);
 
         EditText userPassword=view.findViewById(R.id.user_password);
-        userPassword.setHint(this.password);
+        userPassword.setHint("enter new password");
+
+        ImageButton img=view.findViewById(R.id.editProfileImg);
+
+        Glide.with(view.getContext())
+                .load(this.img)
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.error)
+                .into(img);
 
         EditText userCPassword=view.findViewById(R.id.confrim_pass);
 

@@ -8,8 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -22,20 +24,23 @@ public class ProfileFragment extends Fragment {
 
     private static final String ARG_FULLNAME = "Fullname";
     private static final String ARG_EMAIL = "Email";
+    private static final String ARG_IMG = "Profile img";
 
     private String fullname;
     private String email;
+    private String img;
 
 
     public ProfileFragment() {
         super(R.layout.fragment_profile);
     }
 
-    public static ProfileFragment newInstance(String fullname,String email) {
+    public static ProfileFragment newInstance(String fullname,String email,String img) {
         ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
         args.putString(ARG_FULLNAME, fullname);
         args.putString(ARG_EMAIL, email);
+        args.putString(ARG_IMG, img);
         fragment.setArguments(args);
 
         return fragment;
@@ -50,6 +55,7 @@ public class ProfileFragment extends Fragment {
 
             this.fullname = args.getString(ARG_FULLNAME);
             this.email = args.getString(ARG_EMAIL);
+            this.img = args.getString(ARG_IMG);
 
         }
 
@@ -61,13 +67,21 @@ public class ProfileFragment extends Fragment {
         userFullname.setText(this.fullname);
         TextView userEmail=view.findViewById(R.id.user_email);
         userEmail.setText(this.email);
+        ImageView img=view.findViewById(R.id.photo_id);
+
+        Glide.with(view.getContext())
+                .load(this.img)
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.error)
+                .circleCrop()
+                .into(img);
 
         btnEdit.setOnClickListener(v -> {
             Member member=DataController.getProfileInfo();
             Fragment updateProfilefragment=UpdateProfileFragment.newInstance(
                     member.getFullname(),
                     member.getPhoneNumber(),
-                    member.getPassword()
+                    member.getImg()
             );
             getParentFragmentManager()
                     .beginTransaction()

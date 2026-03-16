@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.time.LocalDate;
@@ -41,8 +42,8 @@ public class DetailedEventFragment extends Fragment {
 
     private String eventId;
     private String eventDesc ;
-    private int eventImg;
-    private int eventCover;
+    private String eventImg;
+    private String eventCover;
     private String eventLoc ;
     private String eventLocLink;
     private LocalDateTime eventDate;
@@ -50,13 +51,12 @@ public class DetailedEventFragment extends Fragment {
     private int eventMax;
 
     public DetailedEventFragment() {
-        // Required empty public constructor
+
     }
 
-    // TODO: Rename and change types and number of parameters
     public static DetailedEventFragment newInstance(String eventId,String eventTitle,
-                                                    String eventDesc ,int eventImg,
-                                                    int eventCover, String eventLoc ,
+                                                    String eventDesc ,String eventImg,
+                                                    String eventCover, String eventLoc ,
                                                     String eventLocLink, LocalDateTime eventDate,
                                                     float eventFees, int eventMax) {
 
@@ -65,8 +65,8 @@ public class DetailedEventFragment extends Fragment {
         args.putString(ARG_EVENTID,eventId);
         args.putString(ARG_EVENTTITLE, eventTitle);
         args.putString(ARG_EVENTDESC, eventDesc);
-        args.putInt(ARG_EVENTIMG , eventImg);
-        args.putInt(ARG_EVENTCOVER, eventCover);
+        args.putString(ARG_EVENTIMG , eventImg);
+        args.putString(ARG_EVENTCOVER, eventCover);
         args.putString(ARG_EVENTLOC , eventLoc);
         args.putString(ARG_EVENTLOCLINK , eventLocLink);
         args.putString(ARG_EVENTDATE, eventDate.toString());
@@ -85,11 +85,11 @@ public class DetailedEventFragment extends Fragment {
 
             this.eventTitle = args.getString(ARG_EVENTTITLE);
             this.eventDesc = args.getString(ARG_EVENTDESC);
-            this.eventCover = args.getInt(ARG_EVENTCOVER);
+            this.eventCover = args.getString(ARG_EVENTCOVER);
             this.eventLoc = args.getString(ARG_EVENTLOC);
             this.eventLocLink = args.getString(ARG_EVENTLOCLINK);
 
-            this.eventImg = args.getInt(ARG_EVENTIMG);
+            this.eventImg = args.getString(ARG_EVENTIMG);
             this.eventMax = args.getInt(ARG_EVENTMAX);
             this.eventFees = args.getFloat(ARG_EVENTFEES);
 
@@ -101,7 +101,7 @@ public class DetailedEventFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_detailed_event, container, false);
     }
 
@@ -109,9 +109,19 @@ public class DetailedEventFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ImageView img=view.findViewById(R.id.devent_image);
-        img.setImageResource(eventImg);
+        Glide.with(view.getContext())
+                .load(eventImg)
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.error)
+                .into(img);
+
         ImageView coverImg=view.findViewById(R.id.devent_cover);
-        coverImg.setImageResource(eventCover);
+        Glide.with(view.getContext())
+                .load(eventCover)
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.error)
+                .into(coverImg);
+
         TextView title=view.findViewById(R.id.devent_title);
         title.setText(eventTitle);
         TextView desc=view.findViewById(R.id.devent_description);
@@ -139,7 +149,7 @@ public class DetailedEventFragment extends Fragment {
 
         }else{
             Participation part=DataController.getParticipationInfo(TokenManager.readToken(requireContext()).getToken(),this.eventId);
-            if(part==null){
+            if(part.getAttendanceStatus()==null){
                 confirm.setVisibility(View.GONE);
                 register.setVisibility(View.VISIBLE);
                 cancel.setVisibility(View.GONE);

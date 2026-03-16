@@ -62,7 +62,8 @@ public class HomePageFragment extends Fragment {
         }else if(this.fragName.equals("profile")){
             Fragment updatedProfileFragment= ProfileFragment.newInstance(
                     DataController.getProfileInfo().getFullname(),
-                    DataController.getProfileInfo().getEmail()
+                    DataController.getProfileInfo().getEmail(),
+                    DataController.getProfileInfo().getImg()
             );
             startFrag=updatedProfileFragment;
         }else if(this.fragName.equals("manage")){
@@ -100,7 +101,8 @@ public class HomePageFragment extends Fragment {
                 }else{
                     selectedFragment=ProfileFragment.newInstance(
                             DataController.getProfileInfo().getFullname(),
-                            DataController.getProfileInfo().getEmail()
+                            DataController.getProfileInfo().getEmail(),
+                            DataController.getProfileInfo().getImg()
                     );
                 }
 

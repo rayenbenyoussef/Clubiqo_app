@@ -15,7 +15,9 @@ public class Member {
     private LocalDate joinDate;
     private String token;
 
-    public Member(int nationalId, String token, LocalDate joinDate, String status, String role, String phoneNumber, String lastName, String firstName, String password, String email) {
+    private String img;
+
+    public Member(int nationalId, String token, LocalDate joinDate, String status, String role, String phoneNumber, String lastName, String firstName, String password, String email,String img) {
         this.nationalId = nationalId;
         this.token = token;
         this.joinDate = joinDate;
@@ -26,10 +28,19 @@ public class Member {
         this.firstName = firstName;
         this.password = password;
         this.email = email;
+        this.img=img;
     }
 
     public String getToken() {
         return token;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public void setToken(String token) {

@@ -50,7 +50,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="your email"
+        android:hint="your password (admin)"
         android:inputType="text"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,11 +58,12 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="399dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/sqsdqsdq_1_"
+        android:layout_width="396dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/clubiqo_cover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,7 +121,7 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="your email"
+        android:hint="your email (admin@admin.com)"
         android:inputType="text"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"

@@ -80,22 +80,23 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="399dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="4dp"
+        android:layout_width="396dp"
+        android:layout_height="94dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/sqsdqsdq_1_"
+        android:src="@drawable/clubiqo_cover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="146dp"
-        android:layout_height="74dp"
+        android:layout_width="145dp"
+        android:layout_height="60dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="124dp"
         android:text="SignUp"
-        android:textSize="45sp"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

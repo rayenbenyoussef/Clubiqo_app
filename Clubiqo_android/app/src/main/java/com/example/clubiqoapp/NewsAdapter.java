@@ -12,12 +12,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
-    ArrayList<NewsResponse> news;
+    ArrayList<News> news;
 
-    public NewsAdapter(ArrayList<NewsResponse> news) {
+    public NewsAdapter(ArrayList<News> news) {
         this.news = news;
     }
 
@@ -30,11 +32,14 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull NewsHolder holder, int position) {
-        NewsResponse news=this.news.get(position);
+        News news=this.news.get(position);
         holder.title.setText(news.getTitle());
         holder.description.setText(news.getDescription());
-        holder.img.setImageResource(news.getImg());
-
+        Glide.with(holder.itemView.getContext())
+                .load(news.getImg()) // URL from API
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.error)
+                .into(holder.img);
         holder.infoButton.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW,
                     Uri.parse(news.getLink()));

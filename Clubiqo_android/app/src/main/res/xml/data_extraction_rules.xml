@@ -8,8 +8,6 @@
         <include domain="database" path="jci_app_db.db"/>
 
         <include domain="sharedpref" path="."/>
-
-        <exclude domain="external" path="news_images_cache/"/>
     </cloud-backup>
 
     <device-transfer>

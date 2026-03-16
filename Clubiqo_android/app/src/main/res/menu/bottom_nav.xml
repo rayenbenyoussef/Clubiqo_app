@@ -6,7 +6,7 @@
         android:icon="@drawable/baseline_newspaper_24"
         android:title="News" />
     <item
-        android:id="@+id/eventResponses"
+        android:id="@+id/events"
         android:icon="@drawable/events_svgrepo_com"
         android:title="Events" />
     <item
