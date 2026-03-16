@@ -57,7 +57,7 @@ The system logic is documented through detailed sequence diagrams in the `/uml d
 
 ### 📦 Downloads & Resources
 *   **GitHub Repository:** [rayenbenyoussef/Clubiqo_app](https://github.com/rayenbenyoussef/Clubiqo_app)
-*   **Final Beta APK:** [Insert Your Link Here]
+*   **Final Beta APK:** [Clubiqo Android](https://drive.google.com/file/d/15ifFZixnaZ_ftwbxIgeCd81_NZ3zKnQ4/view?usp=drive_link)
 
 ---
 
